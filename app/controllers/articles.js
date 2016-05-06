@@ -36,7 +36,7 @@ exports.index = wrap(function* (req, res) {
   const count = yield Article.count();
 
   res.render('articles/index', {
-    title: 'Articles',
+    title: 'Посты',
     articles: articles,
     page: page + 1,
     pages: Math.ceil(count / limit)
@@ -49,7 +49,7 @@ exports.index = wrap(function* (req, res) {
 
 exports.new = function (req, res){
   res.render('articles/new', {
-    title: 'New Article',
+    title: 'Новый пост',
     article: new Article({})
   });
 };
@@ -77,7 +77,7 @@ exports.create = wrap(function* (req, res) {
 
 exports.edit = function (req, res) {
   res.render('articles/edit', {
-    title: 'Edit ' + req.article.title,
+    title: 'Редактировать ' + req.article.title,
     article: req.article
   });
 };

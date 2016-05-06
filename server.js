@@ -50,5 +50,6 @@ function listen () {
 
 function connect () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  return mongoose.connect(config.db, options).connection;
+  var mongodbUri = 'mongodb://test:test@ds047782.mlab.com:47782/rpsmedia';
+  return mongoose.connect(mongodbUri, options).connection;
 }
