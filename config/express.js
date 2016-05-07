@@ -93,7 +93,7 @@ module.exports = function (app, passport) {
     saveUninitialized: true,
     secret: pkg.name,
     store: new mongoStore({
-      url: config.db,
+      url: 'mongodb://test:test@ds047782.mlab.com:47782/rpsmedia',
       collection : 'sessions'
     })
   }));
