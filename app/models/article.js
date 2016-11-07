@@ -7,9 +7,9 @@
 const mongoose = require('mongoose');
 const notify = require('../mailer');
 
-// const Imager = require('imager');
-// const config = require('../../config/config');
-// const imagerConfig = require(config.root + '/config/imager.js');
+ const Imager = require('imager');
+ const config = require('../../config/config');
+ const imagerConfig = require(config.root + '/config/imager.js');
 
 const Schema = mongoose.Schema;
 
@@ -49,13 +49,13 @@ ArticleSchema.path('body').required(true, 'Article body cannot be blank');
  */
 
 ArticleSchema.pre('remove', function (next) {
-  // const imager = new Imager(imagerConfig, 'S3');
-  // const files = this.image.files;
+   const imager = new Imager(imagerConfig, 'S3');
+   const files = this.image.files;
 
-  // if there are files associated with the item, remove from the cloud too
-  // imager.remove(files, function (err) {
-  //   if (err) return next(err);
-  // }, 'article');
+   if there are files associated with the item, remove from the cloud too
+   imager.remove(files, function (err) {
+     if (err) return next(err);
+   }, 'article');
 
   next();
 });
