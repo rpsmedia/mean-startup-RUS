@@ -75,8 +75,8 @@ ArticleSchema.methods = {
 
   uploadAndSave: function (images) {
     const err = this.validateSync();
-    /*if (err && err.toString()) throw new Error(err.toString());
-    return this.save();*/
+    if (err && err.toString()) throw new Error(err.toString());
+    return this.save();
 
     
     if (images && !images.length) return this.save();
