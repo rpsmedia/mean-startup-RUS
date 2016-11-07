@@ -75,10 +75,10 @@ ArticleSchema.methods = {
 
   uploadAndSave: function (images) {
     const err = this.validateSync();
-    if (err && err.toString()) throw new Error(err.toString());
-    return this.save();
+    /*if (err && err.toString()) throw new Error(err.toString());
+    return this.save();*/
 
-    /*
+    
     if (images && !images.length) return this.save();
     const imager = new Imager(imagerConfig, 'S3');
 
@@ -89,7 +89,7 @@ ArticleSchema.methods = {
       }
       self.save(cb);
     }, 'article');
-    */
+    
   },
 
   /**
